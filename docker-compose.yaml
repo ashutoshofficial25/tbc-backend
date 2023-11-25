@@ -1,0 +1,20 @@
+services:
+  auth:
+    build:
+      context: ./auth
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - /auth
+      - /app/node_modules
+
+  student:
+    build:
+      context: ./student
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    volumes:
+      - /student
+      - /app/node_modules

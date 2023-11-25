@@ -11,5 +11,5 @@ app.use("/api", router);
 const PORT = 5000;
 
 app.listen(PORT, () => {
-  console.log("server is up.");
+  console.log("server is up. and updated");
 });
