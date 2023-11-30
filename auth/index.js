@@ -6,6 +6,14 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.get("/", (req, res, next) => {
+  res.status(200).json({
+    success: true,
+    message: "server is up and running",
+  });
+  next();
+});
+
 app.use("/api", router);
 
 const PORT = 5000;
