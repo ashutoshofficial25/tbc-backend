@@ -1,6 +1,6 @@
 FROM node:18
 
-WORKDIR /
+WORKDIR /app
 
 COPY package*.json ./
 
@@ -8,7 +8,7 @@ RUN npm install
 
 RUN npm install -g nodemon
 
-COPY . .
+COPY . ./
 
 ENV NODE_ENV=development
 

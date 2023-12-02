@@ -6,7 +6,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - /auth
+      - ./auth:/app
       - /app/node_modules
 
   student:
@@ -16,5 +16,5 @@ services:
     ports:
       - "5001:5001"
     volumes:
-      - /student
+      - ./student:/app
       - /app/node_modules
