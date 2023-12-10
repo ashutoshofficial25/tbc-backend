@@ -14,7 +14,6 @@ app.use(bodyParser.json());
 
 app.get("*", (req, res, next) => {
   console.log("req :", req.path);
-
   next();
 });
 
