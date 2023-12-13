@@ -1,6 +1,8 @@
 const express = require("express");
 const router = require("./routes");
 const bodyParser = require("body-parser");
+const { boot } = require("./utils/boot");
+const config = require("./config");
 
 const app = express();
 
@@ -16,8 +18,11 @@ app.get("/", (req, res, next) => {
 
 app.use("/api", router);
 
+console.log(process.env.MONGO_URI);
+
 const PORT = 5000;
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log("server is up. and updated");
+  await boot();
 });
